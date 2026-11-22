@@ -10,7 +10,8 @@
   <link rel="alternate" hreflang="uk" href="https://chevit.github.io/Beermanac_web/uk/">
   <link rel="alternate" hreflang="x-default" href="https://chevit.github.io/Beermanac_web/">
   <!-- After release: <meta name="apple-itunes-app" content="app-id=APP_ID"> -->
-  <meta name="theme-color" content="#16131D">
+  <meta name="theme-color" content="#16131D" media="(prefers-color-scheme: dark)">
+  <meta name="theme-color" content="#F4F2F7" media="(prefers-color-scheme: light)">
   <link rel="icon" href="favicon.ico" sizes="any">
   <link rel="icon" type="image/png" href="assets/favicon-64.png">
   <link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
@@ -60,7 +61,6 @@
     <main>
       <section class="hero">
         <div>
-          <img class="hero-icon" src="assets/icon-240.png" alt="Beermanac app icon" width="96" height="96">
           <h1>Beermanac</h1>
           <p class="tagline">Beer styles guide, offline</p>
           <p class="lead">Pilsner or Helles? Porter or Stout? Explore 100+ beer styles with colour, strength, bitterness and the key differences between neighbours. A pocket encyclopedia for newcomers and enthusiasts alike.</p>
@@ -117,32 +117,14 @@
       <section class="section">
         <h2>What's inside</h2>
         <p class="section-lead">Every style card has two layers: a short, friendly overview on top and the technical details below.</p>
-        <div class="features">
-          <article class="feature" style="--c: var(--srm-1)">
-            <h3>100+ beer styles</h3>
-            <p>Lagers, pilsners, bocks, wheat beers, pale ales, IPAs, bitters, porters, stouts, sours, wild and specialty beers.</p>
-          </article>
-          <article class="feature" style="--c: var(--srm-2)">
-            <h3>Strength, bitterness, colour</h3>
-            <p>ABV, IBU and SRM on one shared scale, so you can compare styles at a glance.</p>
-          </article>
-          <article class="feature" style="--c: var(--srm-3)">
-            <h3>How it differs</h3>
-            <p>The key differences from similar styles, with one tap to jump between them.</p>
-          </article>
-          <article class="feature" style="--c: var(--srm-4)">
-            <h3>Aroma, flavour, body</h3>
-            <p>In plain words, plus food pairing ideas for every style.</p>
-          </article>
-          <article class="feature" style="--c: var(--srm-5)">
-            <h3>Ukrainian and European examples</h3>
-            <p>Commercial examples from Ukraine and across Europe, and a local style beyond the classic guidelines: Ukrainian Golden Ale.</p>
-          </article>
-          <article class="feature" style="--c: var(--srm-6)">
-            <h3>For enthusiasts</h3>
-            <p>OG, FG, °Plato, fermentation type, history and ingredients in an expandable technical section.</p>
-          </article>
-        </div>
+        <dl class="facts">
+          <div><dt>100+ beer styles</dt><dd>Lagers, pilsners, bocks, wheat beers, pale ales, IPAs, bitters, porters, stouts, sours, wild and specialty beers.</dd></div>
+          <div><dt>Strength, bitterness, colour</dt><dd>ABV, IBU and SRM on one shared scale, so you can compare styles at a glance.</dd></div>
+          <div><dt>How it differs</dt><dd>The key differences from similar styles, with one tap to jump between them.</dd></div>
+          <div><dt>Aroma, flavour, body</dt><dd>In plain words, plus food pairing ideas for every style.</dd></div>
+          <div><dt>Ukrainian and European examples</dt><dd>Commercial examples from Ukraine and across Europe, and a local style beyond the classic guidelines: Ukrainian Golden Ale.</dd></div>
+          <div><dt>For enthusiasts</dt><dd>OG, FG, °Plato, fermentation type, history and ingredients in an expandable technical section.</dd></div>
+        </dl>
       </section>
 
       <section class="section">
@@ -153,20 +135,11 @@
 
       <section class="section">
         <h2>Simple by design</h2>
-        <div class="features">
-          <article class="feature" style="--c: var(--srm-2)">
-            <h3>Fully offline, no accounts</h3>
-            <p>All content lives on your device. No sign-up, no internet needed, at a beer festival or in the mountains alike.</p>
-          </article>
-          <article class="feature" style="--c: var(--srm-3)">
-            <h3>Light and dark</h3>
-            <p>A clean native iOS design that follows your system theme, with Dynamic Type and VoiceOver support.</p>
-          </article>
-          <article class="feature" style="--c: var(--srm-4)">
-            <h3>Free, with a tip jar</h3>
-            <p>Everything is free. If Beermanac helps you, you can buy the author a glass, a pint or a whole barrel. Tips unlock nothing extra.</p>
-          </article>
-        </div>
+        <dl class="facts">
+          <div><dt>Fully offline, no accounts</dt><dd>All content lives on your device. No sign-up, no internet needed, at a beer festival or in the mountains alike.</dd></div>
+          <div><dt>Light and dark</dt><dd>A clean native iOS design that follows your system theme, with Dynamic Type and VoiceOver support.</dd></div>
+          <div><dt>Free, with a tip jar</dt><dd>Everything is free. If Beermanac helps you, you can buy the author a glass, a pint or a whole barrel. Tips unlock nothing extra.</dd></div>
+        </dl>
       </section>
 
       <p class="note"><strong>About the data.</strong> Style statistics (ABV, IBU, SRM, gravity) are based on the publicly available BJCP 2021 Beer Style Guidelines. All descriptions are written independently for Beermanac. Beermanac is not affiliated with or endorsed by the BJCP.</p>
