@@ -1,0 +1,13 @@
+{
+  "name": "Beermanac",
+  "short_name": "Beermanac",
+  "start_url": "./",
+  "scope": "./",
+  "display": "standalone",
+  "background_color": "#16131D",
+  "theme_color": "#16131D",
+  "icons": [
+    { "src": "assets/icon-192.png", "sizes": "192x192", "type": "image/png" },
+    { "src": "assets/icon-512.png", "sizes": "512x512", "type": "image/png" }
+  ]
+}
