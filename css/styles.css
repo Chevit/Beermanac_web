@@ -1,5 +1,5 @@
 /* Beermanac / Пивогляд — landing styles.
-   Palette comes from the app icon: dark plum background and the SRM spectrum. */
+   Palette comes from the app icon (dark plum) and the app itself (amber accent, SRM colours). */
 
 :root {
   --bg:        #16131D;
@@ -14,13 +14,6 @@
   --link:      #F2C760;
   --foam:      #FFF8EC;
   --on-accent: #1B1622;
-
-  --srm-1: #F8E37E;
-  --srm-2: #EEBB42;
-  --srm-3: #D2812C;
-  --srm-4: #97491D;
-  --srm-5: #562914;
-  --srm-6: #23130B;
 
   --radius: 16px;
   --font: -apple-system, BlinkMacSystemFont, "SF Pro Text", "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
@@ -200,15 +193,22 @@ a:hover { color: var(--accent); }
 }
 .screen {
   border-radius: 36px;
-  background: #1C1924;
+  background: #000;
   color: #F4EEE4;
-  padding: 26px 20px 24px;
+  padding: 26px 12px 18px;
   overflow: hidden;
 }
 .screen .island {
   width: 92px; height: 26px; border-radius: 20px; background: #0C0A10;
   margin: -14px auto 16px;
 }
+/* Sections of the app's inset-grouped card. */
+.grp {
+  background: #1C1C1E;
+  border-radius: 20px;
+  padding: 16px;
+}
+.grp + .grp { margin-top: 12px; }
 .card-head { text-align: center; }
 .screen h2 {
   font-family: var(--font-display);
@@ -217,8 +217,8 @@ a:hover { color: var(--accent); }
   margin: 0 0 3px;
   letter-spacing: -0.3px;
 }
-.screen .alt { font-size: 15px; line-height: 1.3; color: #A99FB8; }
-.screen .crumb { font-size: 12px; color: #A99FB8; margin-top: 4px; }
+.screen .alt { font-size: 15px; line-height: 1.3; color: #98989F; }
+.screen .crumb { font-size: 12px; color: #98989F; margin-top: 4px; }
 .style-glass {
   display: block;
   width: 92px;
@@ -227,9 +227,9 @@ a:hover { color: var(--accent); }
 .screen .overview { font-size: 14px; line-height: 1.5; color: #E6DDD0; margin-top: 14px; }
 
 /* Scales as in the app: small title, zone word, 8-segment track with a range frame, numbers. */
-.scales { margin-top: 14px; display: grid; gap: 12px; }
+.scales { display: grid; gap: 12px; }
 .scale { display: grid; gap: 3px; }
-.scale-title, .scale-nums { font-size: 11px; color: #A99FB8; font-variant-numeric: tabular-nums; }
+.scale-title, .scale-nums { font-size: 11px; color: #98989F; font-variant-numeric: tabular-nums; }
 .scale-zone { font-size: 17px; font-weight: 600; line-height: 1.2; }
 .seg {
   position: relative;
@@ -265,19 +265,14 @@ a:hover { color: var(--accent); }
 .scale--srm i:nth-child(8) { background: #3D0608; }
 
 /* Collapsed disclosure rows, as in the app's card. */
-.rows {
-  margin-top: 16px;
-  border-radius: 12px;
-  background: #26222F;
-  font-size: 14px;
-}
+.grp.rows { padding: 0 0 0 16px; font-size: 14px; }
 .rows span {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 10px 14px;
+  padding: 11px 16px 11px 0;
 }
-.rows span + span { border-top: 1px solid #3A3348; }
+.rows span + span { border-top: 0.5px solid #38383A; }
 .rows span::after {
   content: "";
   width: 7px; height: 7px;
@@ -286,28 +281,37 @@ a:hover { color: var(--accent); }
   transform: rotate(45deg);
 }
 
-/* ── Spectrum ── */
-.spectrum {
+/* ── Families: the app's home list, with each group's colour strip ── */
+.families > h2 {
+  font-family: var(--font-display);
+  font-size: clamp(26px, 4vw, 34px);
+  letter-spacing: -0.6px;
+  line-height: 1.15;
+}
+.families > .section-lead { color: var(--muted); margin-top: 8px; max-width: 40em; }
+.family-list {
+  list-style: none;
   display: grid;
-  grid-template-columns: repeat(6, 1fr);
-  border-radius: var(--radius);
-  overflow: hidden;
-  border: 1px solid var(--border);
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 0 32px;
+  margin-top: 24px;
 }
-.spectrum div {
-  padding: 26px 12px 14px;
-  font-size: 13px;
-  font-weight: 600;
-  line-height: 1.25;
+.family-list li {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  align-items: baseline;
+  gap: 8px 12px;
+  padding: 14px 0 16px;
+  border-top: 1px solid var(--border);
 }
-.spectrum span { display: block; font-weight: 400; font-size: 12px; opacity: 0.8; }
-.spectrum div:nth-child(1) { background: var(--srm-1); color: #3A2A08; }
-.spectrum div:nth-child(2) { background: var(--srm-2); color: #3A2A08; }
-.spectrum div:nth-child(3) { background: var(--srm-3); color: #2A1405; }
-.spectrum div:nth-child(4) { background: var(--srm-4); color: #FFF3E3; }
-.spectrum div:nth-child(5) { background: var(--srm-5); color: #FFF3E3; }
-.spectrum div:nth-child(6) { background: var(--srm-6); color: #FFF3E3; }
-.spectrum-caption { font-size: 14px; color: var(--muted); margin-top: 10px; }
+.family-name { font-weight: 600; }
+.family-count { color: var(--muted); font-variant-numeric: tabular-nums; }
+.strip {
+  grid-column: 1 / -1;
+  height: 10px;
+  border-radius: 5px;
+  box-shadow: inset 0 0 0 0.5px rgba(127, 127, 127, 0.35);
+}
 
 /* ── Sections ── */
 .section { padding-top: 64px; }
@@ -325,7 +329,6 @@ a:hover { color: var(--accent); }
   grid-template-columns: repeat(2, minmax(0, 1fr));
   column-gap: 48px;
   margin-top: 24px;
-  max-width: 920px;
 }
 .facts > div {
   padding: 16px 0;
@@ -335,34 +338,53 @@ a:hover { color: var(--accent); }
 .facts dd { margin-top: 4px; font-size: 15px; color: var(--muted); max-width: 36em; }
 
 .search-demo {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  gap: 12px;
-  margin-top: 14px;
-  font-size: 15px;
+  max-width: 420px;
+  margin-top: 20px;
 }
-.search-demo .q {
-  padding: 6px 14px;
-  border-radius: 999px;
+.search-field {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  height: 44px;
+  padding: 0 16px;
+  border-radius: 22px;
   background: var(--surface-2);
   border: 1px solid var(--border);
-  font-family: ui-monospace, "SF Mono", Menlo, monospace;
-  font-size: 14px;
 }
-.search-demo .arrow { color: var(--muted); }
-.search-demo .hit { font-weight: 700; color: var(--accent); }
-
-.note {
-  margin-top: 56px;
-  padding: 20px 22px;
-  border-radius: var(--radius);
+.search-field svg { width: 17px; height: 17px; color: var(--muted); flex: none; }
+.search-field span::after {
+  content: "";
+  display: inline-block;
+  width: 2px; height: 1.1em;
+  margin-left: 1px;
+  vertical-align: -0.2em;
+  background: var(--accent);
+}
+.results {
+  list-style: none;
+  margin-top: 10px;
+  padding-left: 16px;
+  border-radius: 16px;
   background: var(--surface);
   border: 1px solid var(--border);
+}
+.results li {
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 12px 16px 12px 0;
+  font-size: 16px;
+}
+.results li + li { border-top: 1px solid var(--border); }
+.results .code { color: var(--muted); font-variant-numeric: tabular-nums; }
+
+.data-note {
+  margin-top: 64px;
+  max-width: 46em;
   font-size: 14px;
   color: var(--muted);
 }
-.note strong { color: var(--text); }
+.data-note strong { color: var(--text); }
 
 /* ── Footer ── */
 .site-footer {
@@ -456,12 +478,13 @@ details.faq > div { padding-top: 8px; color: var(--text); }
 /* ── Responsive ── */
 @media (max-width: 860px) {
   .hero { grid-template-columns: 1fr; gap: 40px; padding-top: 16px; }
+  .family-list { grid-template-columns: repeat(2, minmax(0, 1fr)); }
 }
 @media (max-width: 560px) {
   .page { padding: 16px 16px 48px; }
   .facts { grid-template-columns: 1fr; }
-  .spectrum { grid-template-columns: repeat(3, 1fr); }
-    .brand span { display: none; }
+  .family-list { grid-template-columns: 1fr; }
+  .brand span { display: none; }
 }
 
 @media (prefers-reduced-motion: reduce) {
